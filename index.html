@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Kommunekampen!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+          #map {
+            width: 100%;
+            height: 600px;
+          }
+          #blue {
+            background-color: #8470FF;
+          }
+          #red {
+            background-color: #FFB6C1;
+          }
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Den store kommunekampen!</h1>
+        <p>Vi henter åpne data om to valgte kommuner og sammenligner. Data er lagret i CartoDB og Norkart Datavarehus og hentes i sanntid for beregning. Data kjøres inn i Norkart sin analyseplattform. Vi kverner og kverner og vips! Så kommer analyseresultatet tilbake som en anvendelig PDF. Fiks ferdig til beslutningstaker!</p>
+        
+        <p><a class="btn btn-primary btn-lg" href="#kommunekamp" role="button">Hvem blir vinneren? &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container" id="kommunekamp">
+      <div class="row">
+        <div class="col-sm-12">
+        <h1 id="kommuneinfo">In the <span id="cornerinfo">blue</span> corner: (velg kommune i kartet)</h1>
+        </div>
+      </div>
+      <div class="row" style="background-color: #000;">
+        <div class="col-sm-12">
+          <div id="map"></div>
+       </div>
+      </div>
+      <div class="row">
+        <div id="blue" class="col-sm-6">
+          <h3>Blue corner</h3>
+          <hr>
+          <div id="bluecornerinfo">
+            
+          </div>
+        </div>
+
+        <div id="red" class="col-sm-6">
+          <h3>Red corner</h3>
+          <hr>
+          <div id="redcornerinfo">
+            
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+      <div class="col-sm-1" style="float:none;margin:0 auto;">
+        <p><button disabled="true" id="runAnalysis" class="btn btn-primary btn-lg" href="#" role="button">Fight!</button></p>
+
+        <p id="spinner" class="hidden">Kjører analyse</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; GeoPirates (Atle og Alex) 2016</p>
+      </footer>
+    </div> <!-- /container -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.min.js'></script>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js'></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
