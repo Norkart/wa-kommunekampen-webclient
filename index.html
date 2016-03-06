@@ -50,7 +50,7 @@
           <div id="map"></div>
        </div>
       </div>
-      <div class="row">
+      <div class="row" style="padding-bottom: 20px;">
         <div id="blue" class="col-sm-6">
           <h3>Blue corner</h3>
           <hr>
@@ -71,12 +71,49 @@
 
       <div class="row">
       <div class="col-sm-1" style="float:none;margin:0 auto;">
-        <p><button disabled="true" id="runAnalysis" class="btn btn-primary btn-lg" href="#" role="button">Fight!</button></p>
+        <p><button disabled="true" id="runAnalysis" title="Velg to kommuner i kartet" class="btn btn-primary btn-lg" href="#" role="button">Fight!</button></p>
 
-        <p id="spinner" class="hidden">Kjører analyse</p>
+        <div id="spinner" class="hidden">Kjører analyse</div>
+        </div>
+      </div>
+<hr>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+        <h3>Hva skjedde egentlig?</h3>
+        </div>
+
+        <div class="col-sm-2 col-sm-offset-1 text-center">
+        <h3>1</h3>
+        <p>Data hentes direkte fra ekstern kilde (CartoDB) og Norkart Datavarehus via API.</p>
+        </div>
+
+        <div class="col-sm-2 text-center">
+        <h3>2</h3>
+        <p>Analysen sammenligner data som er overlappende med valgte kommune. Noe på geometrianalyse, noe på attributtfilter. Selve analysen lages i FME eller med ditt favoritt-programmeringsspråk (her Python på Heroku).</p>
+        </div>
+
+        <div class="col-sm-2 text-center">
+        <h3>3</h3>
+        <p>Analysen kjøres igjennom Norkart Analyseplattform. Plattformen sikrer enkel integrasjon i alle systemer, korrekt tilgangskontroll og statistikk på kjøringer.</p>
+        </div>
+
+        <div class="col-sm-2 text-center">
+        <h3>4</h3>
+        <p>Resultatet fra analysen er en PDF-rapport satt opp med en fleksibel malstruktur.</p>
+        </div>
+
+        <div class="col-sm-2 text-center">
+        <h3>5</h3>
+        <p>Fiks ferdig, automatisk og selvbetjent beslutningsgrunnlag!</p>
         </div>
       </div>
 
+      <hr>
+      <div class="jumbotron">
+        <div class="container">
+          <h3>Ta en prat med oss for å vite mer om Norkart Datavarehus, Analyseplattform, CartoDB, Webutvikling, QGIS, GISLINE ++ <small>(eller bare slå av en nerdeprat over en øl)</small></h3>
+        </div>
+      </div>
       <hr>
 
       <footer>

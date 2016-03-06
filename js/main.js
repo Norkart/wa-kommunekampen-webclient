@@ -40,7 +40,7 @@ var Norkart = Norkart || {};
     }).addTo(map).setOpacity(1);
 
     layercontrol.addBaseLayer(stamentoner, "Svart/Hvitt");
-
+/*
     var layer_definition = {
       user_name: "atlefren",
       layers: [{
@@ -51,7 +51,7 @@ var Norkart = Norkart || {};
         }
       }]
     };
-
+*/
 
     window.redCornerKomm = 0;
     window.blueCornerKomm = 0;
@@ -60,8 +60,7 @@ var Norkart = Norkart || {};
     var cdblayer = cartodb.createLayer(map, vizurl)
       .addTo(map)
       .on('done', function(layer) {
-
-        layercontrol.addOverlay(layer, "Faresoner");
+        layercontrol.addOverlay(layer, "Kommuner");
 
         layer.setInteraction(true);
         layer.setInteractivity(['komm2', 'navn2']);
@@ -88,8 +87,6 @@ var Norkart = Norkart || {};
               '<h4>', data.komm2, '</h4>'
             ].join(''));
           }
-          console.log("klikket på: ", data, redCornerKomm, blueCornerKomm);
-
           highlightlayer.setSQL("SELECT *, coalesce(navn, admenhetnavn_1__navn) navn2 FROM kommuner WHERE komm IN ('" + redCornerKomm + "','" + blueCornerKomm + "')");
           highlightlayer.setCartoCSS("#layer[komm=" + redCornerKomm + "] { line-color: #f00; line-width: 5; } #layer[komm=" + blueCornerKomm + "] { line-color: #00f; line-width: 5; } #layer::labels {text-name: [navn2];text-face-name: 'DejaVu Sans Book';text-size: 15;text-label-position-tolerance: 0;text-fill: #000;text-halo-fill: #FFF;text-halo-radius: 2;text-allow-overlap: true;text-placement: point;text-placement-type: dummy;}");
         });
